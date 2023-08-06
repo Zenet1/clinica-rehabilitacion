@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/aFamiliares")
 public class AntecedentesFamiliaresController {
+
     @Autowired
     private AntecedentesFamiliaresService antecedentesFamiliaresService;
 

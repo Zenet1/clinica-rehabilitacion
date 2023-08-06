@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/aPatologicos")
+@RequestMapping(value = "/noPatologicos")
 public class AntecedentesNoPatologicosController {
     @Autowired
     private AntecedentesNoPatologicosService antecedentesNoPatologicosService;

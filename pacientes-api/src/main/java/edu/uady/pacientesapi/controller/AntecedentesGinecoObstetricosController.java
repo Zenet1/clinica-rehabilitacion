@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/aGinecoObstetricos")
 public class AntecedentesGinecoObstetricosController {
+
     @Autowired
     private AntecedentesGinecoObstetricosService antecedentesGinecoObstetricosService;
 
