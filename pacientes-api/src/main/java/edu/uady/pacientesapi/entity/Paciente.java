@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "paciente")
@@ -29,6 +30,7 @@ public class Paciente {
     @Column(name = "apellidos", length = 60)
     private String apellidos;
 
+
     private Date fechaNacimiento;
 
     @Column(name = "direccion", length = 255)
@@ -48,5 +50,21 @@ public class Paciente {
 
     @Column(name = "ocupacion", length = 60)
     private String ocupacion;
+
+    @OneToMany(mappedBy = "paciente")
+    private List<AntecedentesFamiliares> antecedentesFamiliares;
+
+    @OneToMany(mappedBy = "paciente")
+    private List<AntecedentesGinecoObstetricos> antecedentesGinecoObstetricos;
+
+    @OneToMany(mappedBy = "paciente")
+    private List<AntecedentesNoPatologicos> antecedentesNoPatologicos;
+
+    @OneToMany(mappedBy = "paciente")
+    private List<AntecedentesPatologicos> antecedentesPatologicos;
+
+    @OneToMany(mappedBy = "paciente")
+    private List<AntecedentesPerinatales> antecedentesPerinatales;
+
 
 }
