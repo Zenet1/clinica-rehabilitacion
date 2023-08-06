@@ -1,23 +1,28 @@
 package edu.uady.citasapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 @Entity
-@Table(name = "antecedentes_familiares")
+@Table(name = "paciente_type")
 @Data
 @NoArgsConstructor
-public class AntecedentesFamiliares {
+public class PacienteType {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "cardiopatias", length = 255)
-    private String cardiopatias;
 
-    
+    @Column(name = "nombre", length = 255)
+    private String direccion;
+
 
 }
+
