@@ -9,10 +9,10 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
-@Table(name = "paciente_status")
+@Table(name = "cita_status")
 @Data
 @NoArgsConstructor
-public class PacienteStatus {
+public class CitaStatus {
 
     @Id
     @Column(name = "id")
