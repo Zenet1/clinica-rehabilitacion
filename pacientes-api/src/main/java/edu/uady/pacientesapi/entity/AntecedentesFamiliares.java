@@ -17,7 +17,7 @@ public class AntecedentesFamiliares {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "id_paciente", nullable = false)
+    @JoinColumn(name = "id_paciente")
     private Paciente paciente;
 
     @Column(name = "cardiopatias")

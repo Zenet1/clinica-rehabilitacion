@@ -80,7 +80,7 @@ public class PacienteService {
         }
     }
 
-    private PacienteDTO createPacienteDTO(Paciente paciente) {
+    protected PacienteDTO createPacienteDTO(Paciente paciente) {
         PacienteDTO pacienteDTO = new PacienteDTO();
 
         pacienteDTO.setNombre(paciente.getNombre());
@@ -105,5 +105,21 @@ public class PacienteService {
 
         return "Paciente con ID " + id + " eliminado exitosamente.";
 
+    }
+
+    public Paciente convertirDTOaPaciente(PacienteDTO pacienteDTO) {
+        Paciente paciente = new Paciente();
+
+        paciente.setNombre(pacienteDTO.getNombre());
+        paciente.setApellidos(pacienteDTO.getApellidos());
+        paciente.setFechaNacimiento(pacienteDTO.getFechaNacimiento());
+        paciente.setDireccion(pacienteDTO.getDireccion());
+        paciente.setEmail(pacienteDTO.getEmail());
+        paciente.setTelefono(pacienteDTO.getTelefono());
+        paciente.setEstado_civil(pacienteDTO.getEstado_civil());
+        paciente.setEscolaridad(pacienteDTO.getEscolaridad());
+        paciente.setOcupacion(pacienteDTO.getOcupacion());
+
+        return paciente;
     }
 }
