@@ -18,6 +18,6 @@ public class AntecedentesFamiliares {
     @Column(name = "cardiopatias", length = 255)
     private String cardiopatias;
 
-    
+
 
 }

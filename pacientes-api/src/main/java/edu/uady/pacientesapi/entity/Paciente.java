@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "paciente")
@@ -48,5 +49,8 @@ public class Paciente {
 
     @Column(name = "ocupacion", length = 60)
     private String ocupacion;
+
+    @OneToMany(mappedBy = "paciente")
+    private List<AntecedentesFamiliares> antecedentesFamiliares;
 
 }
