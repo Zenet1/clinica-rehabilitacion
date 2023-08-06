@@ -1,9 +1,12 @@
 package edu.uady.pacientesapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -33,8 +36,10 @@ public class AntecedentesGinecoObstetricos {
     @Column(name = "partos", length = 30)
     private int partos;
 
-    @Column(name = "FUP")
-    private Date FUP;
+    @Column(name = "FUP", nullable = false)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private LocalDate FUP;
 
     @Column(name = "abortos", length = 30)
     private int abortos;
