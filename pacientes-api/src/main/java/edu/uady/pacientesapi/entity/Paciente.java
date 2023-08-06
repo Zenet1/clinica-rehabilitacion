@@ -18,7 +18,7 @@ public class Paciente {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "fechaCreacion")

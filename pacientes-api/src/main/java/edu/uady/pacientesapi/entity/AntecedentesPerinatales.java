@@ -14,7 +14,7 @@ public class AntecedentesPerinatales {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "id_paciente", nullable = false)
