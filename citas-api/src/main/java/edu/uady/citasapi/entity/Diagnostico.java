@@ -23,6 +23,7 @@ public class Diagnostico {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "fecha")
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date fecha;
 
     @Column(name = "id_cita")

@@ -23,6 +23,7 @@ public class Cita {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "fecha_hora")
+    @JsonFormat(pattern="yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime fechaHora;
 
     @Column(name = "id_paciente")

@@ -26,6 +26,7 @@ public class ExploracionFisica {
     
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "fecha")
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date fecha;
     
     @OneToOne
