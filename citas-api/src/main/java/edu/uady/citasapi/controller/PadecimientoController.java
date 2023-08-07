@@ -28,7 +28,7 @@ public class PadecimientoController {
         }
     }
 
-    @GetMapping("/padecimientos/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<?> getPadecimiento(@PathVariable(value = "id") Long id) {
 
         try {
@@ -40,7 +40,7 @@ public class PadecimientoController {
         }
     }
 
-    @PostMapping("/padecimientos")
+    @PostMapping
     public ResponseEntity<?> createPadecimiento(@RequestBody Padecimiento padecimiento) {
 
         try {
@@ -54,7 +54,7 @@ public class PadecimientoController {
 
     }
 
-    @PutMapping("/padecimientos/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<?> updatePadecimiento(@RequestBody Padecimiento padecimiento, @PathVariable(value = "id") Long id) {
 
         try {
@@ -66,7 +66,7 @@ public class PadecimientoController {
         }
     }
 
-    @DeleteMapping("/padecimientos/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> deletePadecimiento(@PathVariable (value = "id") Long id) {
         try {
             return ResponseEntity.ok().body(padecimientoService.deletePadecimiento(id));
