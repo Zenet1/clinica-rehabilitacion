@@ -253,3 +253,114 @@ Este microservicio proporciona una interfaz segura y eficiente para administrar 
 ### Método Delete
 
 + Endpoint: *{link del host}/citas-api/revaloraciones/{id}*
+
+## Estudios
+
+### Método Get
+
++ Endpoint: *{link del host}/citas-api/estudios*
+
+### Método Get
++ Endpoint: *{link del host}/citas-api/estudios/{id}*
+
+### Método Post
+
++ Endpoint: *{link del host}/citas-api/estudios*
+
+```json
+{
+    "idCita":1,
+    "ubicacion":"C:\\"
+}
+
+```
+### Método Put
+
++ Endpoint: *{link del host}/citas-api/estudios/{id}*
+
+```json
+{
+    "idCita":1,
+    "ubicacion":"C:\\estudios"
+}
+
+```
+### Método Delete
+
++ Endpoint: *{link del host}/citas-api/estudios/{id}*
+
++ ## Padecimientos
+
+### Método Get
+
++ Endpoint: *{link del host}/citas-api/padecimientos*
+
+### Método Get
++ Endpoint: *{link del host}/citas-api/padecimientos/{id}*
+
+### Método Post
+
++ Endpoint: *{link del host}/citas-api/padecimientos*
+
+```json
+{
+    "idCita":1,
+    "fecha":"2018-09-04",
+    "descripcion":"Se ha presentado Neumonía gripal, así como sobreinfecciones del tracto respiratorio por otros gérmenes, fundamentalmente bacterias",
+    "evolucion":"El paciente ha presentado nuevos síntomas en la última semana, ha comunicado que ha estado presentando mareos frecuentes después de consumir cierto medicamento",
+    "estado_actual":"Necesita revisión médica"
+}
+```
+### Método Put
+
++ Endpoint: *{link del host}/citas-api/padecimientos/{id}*
+
+```json
+{
+    "idCita":1,
+    "fecha":"2019-10-6",
+    "descripcion":"Se ha presentado Neumonía gripal, así como sobreinfecciones del tracto respiratorio por otros gérmenes, fundamentalmente bacterias",
+    "evolucion":"El paciente ha presentado nuevos síntomas en la última semana, ha comunicado que ha estado presentando mareos frecuentes después de consumir cierto medicamento",
+    "estado_actual":"En tratamiento"
+}
+
+```
+### Método Delete
+
++ Endpoint: *{link del host}/citas-api/padecimientos/{id}*
+
++ + ## Exploraciones Físicas
+
+### Método Get
+
++ Endpoint: *{link del host}/citas-api/exploraciones-fisicas*
+
+### Método Get
++ Endpoint: *{link del host}/citas-api/exploraciones-fisicas/{id}*
+
+### Método Post
+
++ Endpoint: *{link del host}/citas-api/exploraciones-fisicas*
+
+```json
+{
+    "exploracion":"Estatura: 1.81 cm; Peso: 89 kg; Presenta erupciones de la piel",
+    "fecha":"2018-09-04",
+    "idCita":1
+}
+```
+### Método Put
+
++ Endpoint: *{link del host}/citas-api/exploraciones-fisicas/{id}*
+
+```json
+{
+    "exploracion":"Estatura: 1.81 cm; Peso: 89 kg; No presenta rasgos remarcables",
+    "fecha":"2019-10-6",
+    "idCita":1
+}
+
+```
+### Método Delete
+
++ Endpoint: *{link del host}/citas-api/exploraciones-fisicas/{id}*
