@@ -43,7 +43,7 @@ public class PadecimientoService {
             padecimientoPresent.setDescripcion(padecimiento.getDescripcion());
             padecimientoPresent.setEvolucion(padecimiento.getEvolucion());
             padecimientoPresent.setEstado_actual(padecimiento.getEstado_actual());
-            padecimientoPresent.setId_cita(padecimiento.getId_cita());
+            padecimientoPresent.setIdCita(padecimiento.getIdCita());
 
             Padecimiento estudioUpdated = padecimientoRepository.save(padecimientoPresent);
             return createPadecimientoDTO(estudioUpdated);
@@ -88,7 +88,7 @@ public class PadecimientoService {
         padecimientoDTO.setDescripcion(padecimiento.getDescripcion());
         padecimientoDTO.setEvolucion(padecimiento.getEvolucion());
         padecimientoDTO.setEstado_actual(padecimiento.getEstado_actual());
-        padecimientoDTO.setId_cita(padecimiento.getId_cita());
+        padecimientoDTO.setId_cita(padecimiento.getIdCita());
 
         return padecimientoDTO;
     }

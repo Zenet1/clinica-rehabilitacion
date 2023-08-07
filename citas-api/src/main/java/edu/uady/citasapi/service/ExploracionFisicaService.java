@@ -40,7 +40,7 @@ public class ExploracionFisicaService {
 
             exploracionPresent.setExploracion(exploracion.getExploracion());
             exploracionPresent.setFecha(exploracion.getFecha());
-            exploracionPresent.setId_cita(exploracion.getId_cita());
+            exploracionPresent.setIdCita(exploracion.getIdCita());
 
             ExploracionFisica exploracionUpdated = exploracionFisicaRepository.save(exploracionPresent);
             return createExploracionDTO(exploracionUpdated);
@@ -83,7 +83,7 @@ public class ExploracionFisicaService {
 
         exploracionDTO.setExploracion(exploracion.getExploracion());
         exploracionDTO.setFecha(exploracion.getFecha());
-        exploracionDTO.setId_cita(exploracion.getId_cita());
+        exploracionDTO.setId_cita(exploracion.getIdCita());
 
         return exploracionDTO;
     }
