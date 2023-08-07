@@ -26,18 +26,18 @@ Este microservicio proporciona una interfaz segura y eficiente para administrar 
 
 ### Método Get
 
-+ Endpoint: *{link del host}/api/pacientes
++ Endpoint: *{link del host}/api/pacientes*
 
 Este endpoint permite realizar una solicitud GET para obtener la lista de todos los pacientes registrados en el sistema. Al acceder a este enlace, el servidor responderá con la información de todos los pacientes almacenados en formato JSON.
 
 ### Método Get
-+ Endpoint: *{link del host}/api/pacientes/{id}
++ Endpoint: *{link del host}/api/pacientes/{id}*
 
 Este enpoint permite obtener la información de un paciente asi como sus antecedente específico al proporcionar su ID único en la URL.
 
 ### Método Post
 
-+ Endpoint: *{link del host}/api/pacientes
++ Endpoint: *{link del host}/api/pacientes*
 
 Este endpoint consume un JSON en el cuerpo de la solicitud para crear un nuevo paciente en el sistema.
 
@@ -57,7 +57,7 @@ Este endpoint consume un JSON en el cuerpo de la solicitud para crear un nuevo p
 ```
 ### Método Put
 
-+ Endpoint: *{link del host}/api/pacientes/{id}
++ Endpoint: *{link del host}/api/pacientes/{id}*
 
 Este endpoint consume un JSON en el cuerpo de la solicitud para actualizar la información de un paciente existente. El JSON debe contener los datos actualizados del paciente, identificado por su ID único en la URL.
 
@@ -79,7 +79,7 @@ Este endpoint consume un JSON con el siguiente formato:
 ```
 ### Método Delete
 
-+ Endpoint: *{link del host}/api/pacientes/{id}
++ Endpoint: *{link del host}/api/pacientes/{id}*
 
 Este endpoint permite realizar una solicitud DELETE para eliminar un paciente del sistema. Se debe proporcionar el ID único del paciente que se desea eliminar en la URL.
 
@@ -87,18 +87,18 @@ Este endpoint permite realizar una solicitud DELETE para eliminar un paciente de
 
 ### Metodo Get
 
-+ Endpoint: *{link del host}/api/patologicos
++ Endpoint: *{link del host}/api/patologicos*
 
 Este endpoint permite obtener la lista de todos los antecedentes patológicos registrados en el sistema. Al acceder a este enlace, el servidor responderá con la información de todos los antecedentes patológicos almacenados en formato JSON.
 
 ### Metodo Get
-+ Endpoint: *{link del host}/api/patologicos/{id}
++ Endpoint: *{link del host}/api/patologicos/{id}*
 
 Este endpoint permite obtener la información de los antecedentes patológicos de un paciente específico al proporcionar su ID único en la URL.
 
 ### Metodo Post
 
-+ Endpoint: *{link del host}/api/patologicos/{id-paciente}
++ Endpoint: *{link del host}/api/patologicos/{id-paciente}*
 
 Este endpoint consume un JSON en el cuerpo de la solicitud para crear los antecedentes patológicos de un paciente en el sistema. El JSON debe contener información sobre cirugías, adicciones, traumatismos, ETS, alergias y padecimientos articulares.
 
@@ -116,7 +116,7 @@ Este endpoint consume un JSON con el siguiente formato:
 ```
 ### Método Put
 
-+ Endpoint: *{link del host}/api/patologicos/{id}
++ Endpoint: *{link del host}/api/patologicos/{id}*
 
 Este endpoint consume un JSON en el cuerpo de la solicitud para actualizar los antecedentes patológicos de un paciente existente. El JSON debe contener los datos actualizados del paciente identificado por su ID único en la URL.
 
@@ -133,7 +133,7 @@ Este endpoint consume el siguiente JSON:
 ```
 ### Método Delete
 
-+ Endpoint: *{link del host}/api/patologicos/{id}
++ Endpoint: *{link del host}/api/patologicos/{id}*
 
 Este endpoint permite realizar una solicitud DELETE para eliminar los antecedentes patológicos de un paciente específico. Se debe proporcionar el ID único del paciente cuyos antecedentes patológicos se desean eliminar en la URL.
 
@@ -141,20 +141,20 @@ Este endpoint permite realizar una solicitud DELETE para eliminar los antecedent
 
 ### Método Get
 
-+ Endpoint: *{link del host}/api/perinatales
++ Endpoint: *{link del host}/api/perinatales*
 
 Este endpoint permite obtener la lista de todos los antecedentes perinatales registrados en el sistema. Al acceder a este enlace, el servidor responderá con la información de todos los antecedentes perinatales almacenados en formato JSON.
 
 ### Método Get
 
-+ Endpoint: *{link del host}/api/perinatales/{id}
++ Endpoint: *{link del host}/api/perinatales/{id}*
 
 Este endpoint permite obtener la información de los antecedentes perinatales de un paciente específico al proporcionar su ID único en la URL.
 
 
 ### Método Post
 
-+ Endpoint: *{link del host}/api/perinatales/{id-paciente}
++ Endpoint: *{link del host}/api/perinatales/{id-paciente}*
 
 Este endpoint consume un JSON en el cuerpo de la solicitud para crear los antecedentes perinatales de un paciente en el sistema. El JSON debe contener información sobre la fecha de nacimiento, semanas de gestación (SDG), APGAR, talla al nacer, número de embarazos y peso al nacer.
 
@@ -170,7 +170,7 @@ Este endpoint consume el siguiente JSON:
 }
 ```
 ### Método Put
-+ Endpoint: **{link del host}/api/perinatales/{id}
++ Endpoint: *{link del host}/api/perinatales/{id}*
 
 Este endpoint consume un JSON en el cuerpo de la solicitud para actualizar los antecedentes perinatales de un paciente existente. El JSON debe contener los datos actualizados del paciente identificado por su ID único en la URL.
 
@@ -187,7 +187,7 @@ Este endpoint consume el siguiente JSON:
 }
 ```
 ### Método Delete
-+ Endpoint: *{link del host}/api/perinatales{id}
++ Endpoint: *{link del host}/api/perinatales{id}*
 
 Este endpoint permite realizar una solicitud DELETE para eliminar los antecedentes perinatales de un paciente específico. Se debe proporcionar el ID único del paciente cuyos antecedentes perinatales se desean eliminar en la URL.
 
