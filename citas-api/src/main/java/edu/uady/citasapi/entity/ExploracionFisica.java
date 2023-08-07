@@ -21,7 +21,7 @@ public class ExploracionFisica {
     @Column(name = "id_cita")
     private int id_cita;
     
-    @Column(name = "exploracion", length = 255)
+    @Column(name = "exploracion", length = 600)
     private String exploracion;
     
     @Temporal(TemporalType.TIMESTAMP)
