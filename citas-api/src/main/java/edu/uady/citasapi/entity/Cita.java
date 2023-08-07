@@ -1,6 +1,7 @@
 package edu.uady.citasapi.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -38,4 +39,15 @@ public class Cita {
     @Column(name = "costo_terapia", precision = 2)
     private double costo_terapia;
     
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "cita")
+    @JsonIgnore
+    private Diagnostico diagnostico;
+    
+    @ManyToOne
+    @JoinColumn( name = "id_status")
+    private CitaStatus status;
+    
+    @ManyToOne
+    @JoinColumn( name = "id_paciente_type")
+    private PacienteType paciente_type;
 }

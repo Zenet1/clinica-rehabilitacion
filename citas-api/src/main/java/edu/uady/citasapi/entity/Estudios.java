@@ -24,4 +24,7 @@ public class Estudios {
     @Column(name = "ubicacion", length = 255)
     private String ubicacion;
     
+    @ManyToOne
+    @JoinColumn( name = "id_cita")
+    private Cita cita;
 }

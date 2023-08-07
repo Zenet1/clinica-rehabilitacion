@@ -33,6 +33,10 @@ public class Padecimiento {
     
     @Column(name = "estado_actual", length = 255)
     private String estado_actual;
+    
+    @OneToOne
+    @JoinColumn( name = "id_cita")
+    private Cita cita;
 }
     
     

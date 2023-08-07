@@ -27,4 +27,8 @@ public class ExploracionFisica {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "fecha")
     private Date fecha;
+    
+    @OneToOne
+    @JoinColumn( name = "id_cita")
+    private Cita cita;
 }
