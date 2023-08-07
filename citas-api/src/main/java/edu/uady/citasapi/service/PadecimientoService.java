@@ -88,7 +88,7 @@ public class PadecimientoService {
         padecimientoDTO.setDescripcion(padecimiento.getDescripcion());
         padecimientoDTO.setEvolucion(padecimiento.getEvolucion());
         padecimientoDTO.setEstado_actual(padecimiento.getEstado_actual());
-        padecimientoDTO.setIdCita(padecimiento.getIdCita());
+        padecimientoDTO.setId_cita(padecimiento.getIdCita());
 
         return padecimientoDTO;
     }

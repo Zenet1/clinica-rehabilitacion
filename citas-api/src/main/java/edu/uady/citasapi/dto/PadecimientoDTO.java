@@ -13,5 +13,5 @@ public class PadecimientoDTO {
     private String descripcion;
     private String evolucion;
     private String estado_actual;
-    private int idCita;
+    private int id_cita;
 }

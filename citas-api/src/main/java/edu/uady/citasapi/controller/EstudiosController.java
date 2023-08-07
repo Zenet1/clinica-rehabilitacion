@@ -28,7 +28,7 @@ public class EstudiosController {
         }
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/estudios/{id}")
     public ResponseEntity<?> getEstudio(@PathVariable(value = "id") Long id) {
 
         try {
@@ -40,7 +40,7 @@ public class EstudiosController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/estudios")
     public ResponseEntity<?> createEstudio(@RequestBody Estudios estudio) {
 
         try {
@@ -54,7 +54,7 @@ public class EstudiosController {
 
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/estudios/{id}")
     public ResponseEntity<?> updateEstudio(@RequestBody Estudios estudio, @PathVariable(value = "id") Long id) {
 
         try {
@@ -66,7 +66,7 @@ public class EstudiosController {
         }
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/estudios/{id}")
     public ResponseEntity<?> deleteEstudio(@PathVariable (value = "id") Long id) {
         try {
             return ResponseEntity.ok().body(estudiosService.deleteEstudio(id));
