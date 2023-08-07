@@ -28,7 +28,7 @@ public class ExploracionFisicaController {
         }
     }
 
-    @GetMapping("/exploraciones-fisicas/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<?> getExploracion(@PathVariable(value = "id") Long id) {
 
         try {
@@ -40,7 +40,7 @@ public class ExploracionFisicaController {
         }
     }
 
-    @PostMapping("/exploraciones-fisicas")
+    @PostMapping
     public ResponseEntity<?> createEstudio(@RequestBody ExploracionFisica exploracion) {
 
         try {
@@ -54,7 +54,7 @@ public class ExploracionFisicaController {
 
     }
 
-    @PutMapping("/exploraciones-fisicas/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<?> updateExploracion(@RequestBody ExploracionFisica exploracion, @PathVariable(value = "id") Long id) {
 
         try {
@@ -66,7 +66,7 @@ public class ExploracionFisicaController {
         }
     }
 
-    @DeleteMapping("/exploraciones-fisicas/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteExploracion(@PathVariable (value = "id") Long id) {
         try {
             return ResponseEntity.ok().body(exploracionFisicaService.deleteExploracion(id));

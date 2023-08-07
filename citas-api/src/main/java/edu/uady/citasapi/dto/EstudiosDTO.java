@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class EstudiosDTO {
 
+	private int idCita;
     private String ubicacion;
 
 }
