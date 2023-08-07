@@ -22,7 +22,7 @@ public class AntecedentesFamiliares {
 
     @Column(name = "cardiopatias")
     private String cardiopatias;
-    
+
     @Column(name = "alergias")
     private String alergias;
 
