@@ -39,7 +39,7 @@ public class EstudiosService {
             Estudios estudioPresent = estudioOptional.get();
 
             estudioPresent.setUbicacion(estudio.getUbicacion());
-
+            estudioPresent.setIdCita(estudio.getIdCita());
             Estudios estudioUpdated = estudiosRepository.save(estudioPresent);
             return createEstudioDTO(estudioUpdated);
         } else {
@@ -80,7 +80,7 @@ public class EstudiosService {
         EstudiosDTO estudioDTO = new EstudiosDTO();
 
         estudioDTO.setUbicacion(estudio.getUbicacion());
-
+        estudioDTO.setIdCita(estudio.getIdCita());
         return estudioDTO;
     }
 
