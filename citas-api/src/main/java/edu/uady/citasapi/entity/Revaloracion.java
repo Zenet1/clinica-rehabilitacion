@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
+
 @Entity
 @Table(name = "revaloracion")
 @Data
@@ -26,20 +27,20 @@ public class Revaloracion {
     private Date fecha;
 
     @Column(name = "id_diagnostico")
-    private int id_diagnostico;
+    private int idDiagnostico;
     
     @Column(name = "id_sistema")
-    private int id_sistema;
+    private int idSistema;
 
     @Column(name = "diagnostico", length = 255)
     private String diagnostico;
     
     @ManyToOne
-    @JoinColumn( name = "id_diagnostico")
+    @JoinColumn( name = "id_diagnostico",insertable=false, updatable=false)
     private Diagnostico diagnostico_padre;
     
     @OneToOne
-    @JoinColumn( name = "id_sistema")
+    @JoinColumn( name = "id_sistema",insertable=false, updatable=false)
     private CatalogoSistemas sistema;
    
     

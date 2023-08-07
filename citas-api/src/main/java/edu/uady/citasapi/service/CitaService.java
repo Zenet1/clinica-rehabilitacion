@@ -3,7 +3,7 @@ package edu.uady.citasapi.service;
 import edu.uady.citasapi.dto.CitaDTO;
 import edu.uady.citasapi.error.CitaException;
 import edu.uady.citasapi.repository.CitaRepository;
-import edu.uady.pacientesapi.entity.Paciente;
+import edu.uady.citasapi.entity.Cita;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,111 +16,103 @@ import java.util.Optional;
 public class CitaService {
 
     @Autowired
-    private CitaRepository pacienteRepository;
+    private CitaRepository citaRepository;
 
-    public CitaDTO createPaciente(Paciente paciente) throws Exception {
+    public CitaDTO createCita(Cita cita) throws Exception {
 
         try {
-            Paciente pacienteCreated = pacienteRepository.save(paciente);
-            return createPacienteDTO(pacienteCreated);
+            Cita citaCreated = citaRepository.save(cita);
+            return createCitaDTO(citaCreated);
         } catch (Exception exception) {
-            throw new CitaException("Ha ocurrido un error al guardar nuevo paciente.");
+            throw new CitaException("Ha ocurrido un error al guardar nuevo cita.");
         }
 
     }
 
-    public CitaDTO updatePaciente(Paciente paciente, Long id) throws Exception {
+    public CitaDTO updateCita(Cita cita, Long id) throws Exception {
 
-        Optional<Paciente> pacienteOptional = pacienteRepository.findById(id);
+        Optional<Cita> citaOptional = citaRepository.findById(id);
 
-        if (pacienteOptional.isPresent()) {
-            Paciente pacienteExistente = pacienteOptional.get();
+        if (citaOptional.isPresent()) {
+            Cita citaExistente = citaOptional.get();
+            
+            citaExistente.setIdPaciente(cita.getIdPaciente());
+            citaExistente.setFechaHora(cita.getFechaHora());
+            citaExistente.setIdPacienteType(cita.getIdPacienteType());
+            citaExistente.setIdStatus(cita.getIdStatus());
+            citaExistente.setNumeroSesion(cita.getNumeroSesion());
+            citaExistente.setCostoTerapia(cita.getCostoTerapia());
 
-            pacienteExistente.setNombre(paciente.getNombre());
-            pacienteExistente.setApellidos(paciente.getApellidos());
-            pacienteExistente.setDireccion(paciente.getDireccion());
-            pacienteExistente.setEmail(paciente.getEmail());
-            pacienteExistente.setFechaNacimiento(paciente.getFechaNacimiento());
-            pacienteExistente.setEscolaridad(paciente.getEscolaridad());
-            pacienteExistente.setOcupacion(paciente.getOcupacion());
-            pacienteExistente.setEstado_civil(paciente.getEstado_civil());
-
-            Paciente pacienteUpdated = pacienteRepository.save(pacienteExistente);
-            return createPacienteDTO(pacienteUpdated);
+            Cita citaUpdated = citaRepository.save(citaExistente);
+            return createCitaDTO(citaUpdated);
         } else {
-            throw new CitaException("No existe paciente con ID " + id);
+            throw new CitaException("No existe cita con ID " + id);
         }
     }
 
-    public List<CitaDTO> getAllPacientes() throws Exception {
-        List<Paciente> pacientes = pacienteRepository.findAll();
+    public List<CitaDTO> getAllCitas() throws Exception {
+        List<Cita> citas = citaRepository.findAll();
 
-        if (pacientes.isEmpty()) {
-            throw new CitaException("No hay pacientes registrados.");
+        if (citas.isEmpty()) {
+            throw new CitaException("No hay citas registrados.");
         }
 
-        List<CitaDTO> pacienteDTOS = new ArrayList<>();
+        List<CitaDTO> citaDTOS = new ArrayList<>();
 
-        pacientes.forEach(paciente -> {
+        citas.forEach(cita -> {
 
-            CitaDTO pacienteDTO = createPacienteDTO(paciente);
-            pacienteDTOS.add(pacienteDTO);
+            CitaDTO citaDTO = createCitaDTO(cita);
+            citaDTOS.add(citaDTO);
         });
 
-        return pacienteDTOS;
+        return citaDTOS;
     }
 
-    public CitaDTO getPaciente(Long id) throws Exception {
-        Optional<Paciente> pacienteOptional = pacienteRepository.findById(id);
+    public CitaDTO getCita(Long id) throws Exception {
+        Optional<Cita> citaOptional = citaRepository.findById(id);
 
-        if (pacienteOptional.isPresent()) {
-            Paciente paciente = pacienteOptional.get();
-            return createPacienteDTO(paciente);
+        if (citaOptional.isPresent()) {
+            Cita cita = citaOptional.get();
+            return createCitaDTO(cita);
         } else {
-            throw new CitaException("No se encontró algún paciente con el ID " + id);
+            throw new CitaException("No se encontró algún cita con el ID " + id);
         }
     }
 
-    protected CitaDTO createPacienteDTO(Paciente paciente) {
-        CitaDTO pacienteDTO = new CitaDTO();
+    protected CitaDTO createCitaDTO(Cita cita) {
+        CitaDTO citaDTO = new CitaDTO();
 
-        pacienteDTO.setNombre(paciente.getNombre());
-        pacienteDTO.setApellidos(paciente.getApellidos());
-        pacienteDTO.setFechaNacimiento(paciente.getFechaNacimiento());
-        pacienteDTO.setDireccion(paciente.getDireccion());
-        pacienteDTO.setTelefono(paciente.getTelefono());
-        pacienteDTO.setEmail(paciente.getEmail());
-        pacienteDTO.setEstado_civil(paciente.getEstado_civil());
-        pacienteDTO.setEscolaridad(paciente.getEscolaridad());
-        pacienteDTO.setOcupacion(paciente.getOcupacion());
+        citaDTO.setIdPaciente(cita.getIdPaciente());
+        citaDTO.setFechaHora(cita.getFechaHora());
+        citaDTO.setIdPacienteType(cita.getIdPacienteType());
+        citaDTO.setIdStatus(cita.getIdStatus());
+        citaDTO.setNumeroSesion(cita.getNumeroSesion());
+        citaDTO.setCostoTerapia(cita.getCostoTerapia());
 
-        return pacienteDTO;
+        return citaDTO;
     }
 
-    public String deletePaciente(Long id) throws Exception {
+    public String deleteCita(Long id) throws Exception {
 
-        Paciente paciente = pacienteRepository.findById(id)
-                .orElseThrow(() -> new CitaException("No se encontró ningún paciente con ID " + id));
+        Cita cita = citaRepository.findById(id)
+                .orElseThrow(() -> new CitaException("No se encontró ningún cita con ID " + id));
 
-        pacienteRepository.delete(paciente);
+        citaRepository.delete(cita);
 
-        return "Paciente con ID " + id + " eliminado exitosamente.";
+        return "Cita con ID " + id + " eliminado exitosamente.";
 
     }
 
-    public Paciente convertirDTOaPaciente(CitaDTO pacienteDTO) {
-        Paciente paciente = new Paciente();
+    public Cita convertirDTOaCita(CitaDTO citaDTO) {
+        Cita cita = new Cita();
 
-        paciente.setNombre(pacienteDTO.getNombre());
-        paciente.setApellidos(pacienteDTO.getApellidos());
-        paciente.setFechaNacimiento(pacienteDTO.getFechaNacimiento());
-        paciente.setDireccion(pacienteDTO.getDireccion());
-        paciente.setEmail(pacienteDTO.getEmail());
-        paciente.setTelefono(pacienteDTO.getTelefono());
-        paciente.setEstado_civil(pacienteDTO.getEstado_civil());
-        paciente.setEscolaridad(pacienteDTO.getEscolaridad());
-        paciente.setOcupacion(pacienteDTO.getOcupacion());
+        cita.setIdPaciente(cita.getIdPaciente());
+        cita.setFechaHora(cita.getFechaHora());
+        cita.setIdPacienteType(cita.getIdPacienteType());
+        cita.setIdStatus(cita.getIdStatus());
+        cita.setNumeroSesion(cita.getNumeroSesion());
+        cita.setCostoTerapia(cita.getCostoTerapia());
 
-        return paciente;
+        return cita;
     }
 }

@@ -19,12 +19,12 @@ public class Estudios {
     private int id;
 
     @Column(name = "id_cita")
-    private int id_cita;
+    private int idCita;
     
     @Column(name = "ubicacion", length = 255)
     private String ubicacion;
     
     @ManyToOne
-    @JoinColumn( name = "id_cita")
+    @JoinColumn( name = "id_cita",insertable=false, updatable=false)
     private Cita cita;
 }

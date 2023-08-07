@@ -19,7 +19,7 @@ public class ExploracionFisica {
     private int id;
 
     @Column(name = "id_cita")
-    private int id_cita;
+    private int idCita;
     
     @Column(name = "exploracion", length = 600)
     private String exploracion;
@@ -29,6 +29,6 @@ public class ExploracionFisica {
     private Date fecha;
     
     @OneToOne
-    @JoinColumn( name = "id_cita")
+    @JoinColumn( name = "id_cita",insertable=false, updatable=false)
     private Cita cita;
 }

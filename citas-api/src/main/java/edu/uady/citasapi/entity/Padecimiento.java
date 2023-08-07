@@ -23,7 +23,7 @@ public class Padecimiento {
     private Date fecha;
 
     @Column(name = "id_cita")
-    private int id_cita;
+    private int idCita;
 
     @Column(name = "descripcion", length = 255)
     private String descripcion;
@@ -35,7 +35,7 @@ public class Padecimiento {
     private String estado_actual;
     
     @OneToOne
-    @JoinColumn( name = "id_cita")
+    @JoinColumn( name = "id_cita" ,insertable=false, updatable=false)
     private Cita cita;
 }
     

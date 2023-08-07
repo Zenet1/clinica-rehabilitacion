@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-public class PacienteAntecedentesFamiliaresDTO {
-    private CitaDTO paciente;
-    private List<DiagnosticoDTO> antecedentes_familiares;
+public class CitaStatusDTO {
+
+	private String nombre;
 }

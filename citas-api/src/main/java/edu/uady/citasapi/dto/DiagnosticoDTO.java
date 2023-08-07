@@ -4,12 +4,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
 public class DiagnosticoDTO {
-    private int id_cita;
-    private int id_sistema;
-    private LocalDate fecha;
+    private int idCita;
+    private int idSistema;
+    private Date fecha;
     private String diagnostico;
 }

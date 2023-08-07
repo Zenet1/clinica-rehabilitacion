@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "citas")
@@ -22,32 +23,44 @@ public class Cita {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "fecha_hora")
-    private LocalDateTime fecha_hora;
+    private LocalDateTime fechaHora;
 
     @Column(name = "id_paciente")
-    private int id_paciente;
+    private int idPaciente;
 
     @Column(name = "id_paciente_type")
-    private int id_paciente_type;
+    private int idPacienteType;
     
     @Column(name = "id_status")
-    private int id_status;
+    private int idStatus;
     
     @Column(name = "numero_sesion")
-    private int numero_sesion;
+    private int numeroSesion;
     
     @Column(name = "costo_terapia", precision = 2)
-    private double costo_terapia;
+    private double costoTerapia;
     
     @OneToOne(fetch = FetchType.LAZY, mappedBy = "cita")
     @JsonIgnore
     private Diagnostico diagnostico;
     
     @ManyToOne
-    @JoinColumn( name = "id_status")
+    @JoinColumn( name = "id_status",insertable=false, updatable=false)
     private CitaStatus status;
     
     @ManyToOne
-    @JoinColumn( name = "id_paciente_type")
+    @JoinColumn( name = "id_paciente_type",insertable=false, updatable=false)
     private PacienteType paciente_type;
+    
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "cita")
+    @JsonIgnore
+    private Padecimiento padecimiento;
+    
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "cita")
+    @JsonIgnore
+    private ExploracionFisica exploracion;
+    
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "cita")
+    @JsonIgnore
+    private List<Estudios>  estudios;
 }
